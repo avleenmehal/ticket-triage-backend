@@ -1,0 +1,29 @@
+{
+  "docs": [
+    {
+      "doc_id": "fraud_policy.md#chunk-1",
+      "file": "fraud_policy.md",
+      "text": "# Fraud Policy\n\nRisk scoring required. High-risk orders need manual verification before monetary actions.\n"
+    },
+    {
+      "doc_id": "warranty_policy.md#chunk-1",
+      "file": "warranty_policy.md",
+      "text": "# Warranty Policy\n\n1-year warranty for functional defects.\nExcludes misuse or unauthorized repairs.\n"
+    },
+    {
+      "doc_id": "chargeback_policy.md#chunk-1",
+      "file": "chargeback_policy.md",
+      "text": "# Chargeback Policy\n\nDuplicate charges are refunded after verification.\n"
+    },
+    {
+      "doc_id": "delivery_policy.md#chunk-1",
+      "file": "delivery_policy.md",
+      "text": "# Delivery Policy\n\nStandard deliveries: 3\u20135 business days.\nIf delayed beyond 7 days, refund or replacement may be offered.\n"
+    },
+    {
+      "doc_id": "refund_policy.md#chunk-1",
+      "file": "refund_policy.md",
+      "text": "# Refund Policy\n\nCustomers are eligible for refunds within 30 days of delivery.\nRefunds require human approval.\nPartial refunds may be issued for shipping delays exceeding 10 days.\n"
+    }
+  ]
+}
