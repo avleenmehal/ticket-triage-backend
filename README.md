@@ -1,23 +1,142 @@
-# Phase 2 — Public
+# Phase 2 — Backend API
 
-Adds approval gate and policy citations. Includes `/kb/search` and payment stubs.
+FastAPI backend for the Viridien support triage system. Provides order data, issue classification, knowledge-base semantic search (pgvector), and payment stubs used by the LangGraph agent.
 
+## Prerequisites
 
-Phase 2. HR Interview Task with Agentic RAG (tougher, 60 to 75 minutes live)
-Objective
+- Python 3.12+
+- PostgreSQL 17+ with the `pgvector` extension installed
+- The `viridien` database created and schema applied
 
-Add durable persistence, a human approval gate, and a focused agentic RAG subgraph that grounds the system’s recommendations in policy documents.
-Required
+## Setup
 
-•	Persistence: compile the graph with a Postgres checkpointer. Demonstrate stopping the process mid-run and resuming the same thread. 
-•	Approval: node propose_remedy calls payments.refund_preview, then interrupts for human approval. On resume, call payments.refund_commit.
-•	Agentic RAG subgraph:
-o	Add a small knowledge base of 8 to 12 short policy files in Markdown stored locally in the repo.
-o	Provide an indexing CLI kb_index that chunks and embeds the docs into a vector store. You may use pgvector or Chroma.
-o	Build a kb_orchestrator node that plans retrieval: choose retriever, run top-k retrieval, optionally call a reranker or an LLM-based re-scorer, and return citations.
-o	Integrate RAG into policy_evaluator so proposed actions must cite relevant policy sections.
-•	Observability: show the run tree and node metadata in LangSmith or Langfuse, including retrieved document IDs and citation spans
-Live demo
-•	Start a run, stop the server, restart, and resume to completion.
-•	Show an interrupted run that resumes after approval.
-•	Show RAG citations in the proposed remedy and in the final reply.
+### 1. Database
+
+```bash
+# Create the database
+createdb viridien
+
+# Apply schema (creates all tables + pgvector extension)
+psql viridien < scripts/schema.sql
+```
+
+### 2. Seed data
+
+```bash
+python3.12 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+
+# Seed orders, issues, replies, and policy embeddings into PostgreSQL
+python scripts/seed_db.py
+```
+
+`seed_db.py` does two things:
+- Inserts mock orders, classification rules, and reply templates
+- Chunks the policy Markdown files, generates 384-dim embeddings with `all-MiniLM-L6-v2`, and stores them in `policy_chunks` with pgvector
+
+### 3. Environment
+
+Create a `.env` file in the project root:
+
+```
+DATABASE_URL=postgresql://localhost/viridien
+```
+
+### 4. Start the service
+
+```bash
+./run.sh
+# or
+uvicorn app.main:app --host 0.0.0.0 --port 8000
+```
+
+The service starts on `http://localhost:8000`.
+
+## Knowledge-base indexing CLI
+
+`scripts/kb_index.py` generates `mock_data/policy_index.json` by chunking all Markdown files in `mock_data/policies/` into 400-character segments. `seed_db.py` reads this file to embed and store the chunks.
+
+```bash
+python scripts/kb_index.py
+# Indexed N chunks → mock_data/policy_index.json
+```
+
+## API Endpoints
+
+| Method | Path | Description |
+|--------|------|-------------|
+| `GET` | `/health` | Health check |
+| `GET` | `/orders/get?order_id=ORD1001` | Fetch order by ID |
+| `GET` | `/orders/search?customer_email=...` | Search orders by email or query string |
+| `POST` | `/classify/issue` | Keyword-based issue classification |
+| `POST` | `/reply/draft` | Render reply template for an issue type |
+| `POST` | `/kb/search` | pgvector semantic similarity search over policy chunks |
+| `POST` | `/refund/preview` | Calculate refund amount for an order |
+| `POST` | `/refund/commit` | Record committed refund in `triage_log` |
+| `POST` | `/replacement/preview` | Propose replacement item for an order |
+| `POST` | `/replacement/commit` | Record committed replacement in `triage_log` |
+
+### Example: semantic KB search
+
+```bash
+curl -X POST http://localhost:8000/kb/search \
+  -H "Content-Type: application/json" \
+  -d '{"query": "duplicate charge refund policy", "top_k": 3}'
+```
+
+Returns ranked policy chunks with cosine similarity scores and a `citations` list of source filenames.
+
+### Example: refund preview
+
+```bash
+curl -X POST http://localhost:8000/refund/preview \
+  -H "Content-Type: application/json" \
+  -d '{"order_id": "ORD1003", "issue_type": "duplicate_charge"}'
+```
+
+## Database Schema
+
+```
+orders          — customer orders (order_id, items JSONB, total_amount, …)
+issues          — keyword → issue_type classification rules
+replies         — issue_type → reply template
+policy_chunks   — chunked policy docs with vector(384) embeddings (pgvector)
+triage_log      — audit log written on every refund/commit or replacement/commit
+```
+
+## Policy Knowledge Base
+
+Five policy documents live in `mock_data/policies/`:
+
+| File | Coverage |
+|------|----------|
+| `refund_policy.md` | Eligibility window, approval requirements, partial refunds |
+| `chargeback_policy.md` | Duplicate charge verification and refund |
+| `delivery_policy.md` | SLA windows and delay remedies |
+| `warranty_policy.md` | Defect and replacement criteria |
+| `fraud_policy.md` | Fraud detection and escalation |
+
+Chunks are embedded at 384 dimensions using `sentence-transformers/all-MiniLM-L6-v2` (no external API key required).
+
+## Project Structure
+
+```
+p2-umber-abbey-main/
+├── app/
+│   ├── main.py          # FastAPI application — all endpoints
+│   └── db.py            # psycopg2 connection helper
+├── mock_data/
+│   ├── orders.json       # Seed orders
+│   ├── issues.json       # Keyword classification rules
+│   ├── replies.json      # Reply templates
+│   ├── policy_index.json # Pre-chunked policy index (generated by kb_index.py)
+│   └── policies/         # Source policy Markdown files (5 docs)
+├── scripts/
+│   ├── schema.sql        # PostgreSQL DDL — run once to create tables
+│   ├── seed_db.py        # Seeds all tables and embeds policy chunks
+│   └── kb_index.py       # CLI: chunks policies → policy_index.json
+├── requirements.txt
+├── run.sh
+└── run.py
+```
