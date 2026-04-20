@@ -1,0 +1,77 @@
+[
+  {
+    "email": "ava.chen@example.com",
+    "name": "Ava Chen",
+    "risk_tier": "normal"
+  },
+  {
+    "email": "david.lee@example.com",
+    "name": "David Lee",
+    "risk_tier": "normal"
+  },
+  {
+    "email": "sara.patel@example.com",
+    "name": "Sara Patel",
+    "risk_tier": "normal"
+  },
+  {
+    "email": "john.smith@example.com",
+    "name": "John Smith",
+    "risk_tier": "normal"
+  },
+  {
+    "email": "emily.rivera@example.com",
+    "name": "Emily Rivera",
+    "risk_tier": "normal"
+  },
+  {
+    "email": "carlos.gomez@example.com",
+    "name": "Carlos Gomez",
+    "risk_tier": "normal"
+  },
+  {
+    "email": "priya.iyer@example.com",
+    "name": "Priya Iyer",
+    "risk_tier": "normal"
+  },
+  {
+    "email": "marcus.allen@example.com",
+    "name": "Marcus Allen",
+    "risk_tier": "watch"
+  },
+  {
+    "email": "noah.kim@example.com",
+    "name": "Noah Kim",
+    "risk_tier": "normal"
+  },
+  {
+    "email": "lina.alvarez@example.com",
+    "name": "Lina Alvarez",
+    "risk_tier": "normal"
+  },
+  {
+    "email": "owen.hart@example.com",
+    "name": "Owen Hart",
+    "risk_tier": "watch"
+  },
+  {
+    "email": "maya.gupta@example.com",
+    "name": "Maya Gupta",
+    "risk_tier": "normal"
+  },
+  {
+    "email": "jake.turner@example.com",
+    "name": "Jake Turner",
+    "risk_tier": "flagged"
+  },
+  {
+    "email": "nina.ross@example.com",
+    "name": "Nina Ross",
+    "risk_tier": "flagged"
+  },
+  {
+    "email": "ryan.cho@example.com",
+    "name": "Ryan Cho",
+    "risk_tier": "flagged"
+  }
+]

@@ -44,3 +44,29 @@ CREATE TABLE IF NOT EXISTS triage_log (
     final_status     TEXT,
     created_at       TIMESTAMP DEFAULT NOW()
 );
+
+-- Customer profiles (one row per unique email)
+CREATE TABLE IF NOT EXISTS customers (
+    email        TEXT PRIMARY KEY,
+    name         TEXT NOT NULL,
+    created_at   TIMESTAMP DEFAULT NOW(),
+    risk_tier    TEXT NOT NULL DEFAULT 'normal'  -- 'normal' | 'watch' | 'flagged'
+);
+
+-- Unified support ticket history — covers refund and replacement claims
+-- ticket_type: 'refund' | 'replacement'
+-- issue_type: mirrors triage classifier values (e.g. missing_item, duplicate_charge, damaged_item, wrong_item)
+-- resolution: JSONB — for refunds: {"amount": 49.99}, for replacements: {"item": "Webcam Pro", "sku": "SKU-230-P"}
+-- abuse_label is ground truth for evaluator testing: 'legitimate' | 'suspicious' | 'abusive'
+CREATE TABLE IF NOT EXISTS support_tickets (
+    id              SERIAL PRIMARY KEY,
+    customer_email  TEXT NOT NULL REFERENCES customers(email),
+    order_id        TEXT NOT NULL,
+    ticket_text     TEXT NOT NULL,
+    ticket_type     TEXT NOT NULL,
+    issue_type      TEXT NOT NULL,
+    requested_at    TIMESTAMP NOT NULL,
+    outcome         TEXT NOT NULL DEFAULT 'pending',  -- 'pending' | 'approved' | 'rejected'
+    resolution      JSONB,
+    abuse_label     TEXT NOT NULL DEFAULT 'legitimate'
+);

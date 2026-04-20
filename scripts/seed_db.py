@@ -24,6 +24,17 @@ def load_json(filename):
 def seed(conn):
     cur = conn.cursor()
 
+    # --- Customers (must be seeded before support_tickets due to FK) ---
+    customers = load_json("customers.json")
+    cur.execute("DELETE FROM support_tickets")
+    cur.execute("DELETE FROM customers")
+    for c in customers:
+        cur.execute(
+            "INSERT INTO customers (email, name, risk_tier) VALUES (%s, %s, %s)",
+            (c["email"], c["name"], c["risk_tier"]),
+        )
+    print(f"Seeded {len(customers)} customers")
+
     # --- Orders ---
     orders = load_json("orders.json")
     cur.execute("DELETE FROM orders")
@@ -86,6 +97,30 @@ def seed(conn):
             (chunk["doc_id"], chunk["file"], chunk["text"], embedding),
         )
     print(f"Seeded {len(chunks)} policy chunks with embeddings")
+
+    # --- Support Tickets ---
+    tickets = load_json("support_tickets.json")
+    for t in tickets:
+        cur.execute(
+            """
+            INSERT INTO support_tickets
+                (customer_email, order_id, ticket_text, ticket_type, issue_type,
+                 requested_at, outcome, resolution, abuse_label)
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)
+            """,
+            (
+                t["customer_email"],
+                t["order_id"],
+                t["ticket_text"],
+                t["ticket_type"],
+                t["issue_type"],
+                t["requested_at"],
+                t["outcome"],
+                Json(t["resolution"]) if t.get("resolution") else None,
+                t["abuse_label"],
+            ),
+        )
+    print(f"Seeded {len(tickets)} support tickets")
 
     conn.commit()
     cur.close()

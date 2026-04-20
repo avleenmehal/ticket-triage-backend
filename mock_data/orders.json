@@ -3,13 +3,7 @@
     "order_id": "ORD1001",
     "customer_name": "Ava Chen",
     "email": "ava.chen@example.com",
-    "items": [
-      {
-        "sku": "SKU-100-A",
-        "name": "Wireless Mouse",
-        "quantity": 1
-      }
-    ],
+    "items": [{ "sku": "SKU-100-A", "name": "Wireless Mouse", "quantity": 1 }],
     "order_date": "2025-01-08",
     "status": "delivered",
     "delivery_date": "2025-01-12",
@@ -20,47 +14,29 @@
     "order_id": "ORD1002",
     "customer_name": "David Lee",
     "email": "david.lee@example.com",
-    "items": [
-      {
-        "sku": "SKU-102-C",
-        "name": "Bluetooth Speaker",
-        "quantity": 1
-      }
-    ],
+    "items": [{ "sku": "SKU-102-C", "name": "Bluetooth Speaker", "quantity": 1 }],
     "order_date": "2025-02-10",
     "status": "delivered",
     "delivery_date": "2025-02-14",
-    "total_amount": 89.0,
+    "total_amount": 89.00,
     "currency": "USD"
   },
   {
     "order_id": "ORD1003",
     "customer_name": "Sara Patel",
     "email": "sara.patel@example.com",
-    "items": [
-      {
-        "sku": "SKU-110-Z",
-        "name": "Noise Cancelling Headphones",
-        "quantity": 1
-      }
-    ],
+    "items": [{ "sku": "SKU-110-Z", "name": "Noise Cancelling Headphones", "quantity": 1 }],
     "order_date": "2025-03-05",
     "status": "processing",
     "delivery_date": null,
-    "total_amount": 120.5,
+    "total_amount": 120.50,
     "currency": "USD"
   },
   {
     "order_id": "ORD1004",
     "customer_name": "John Smith",
     "email": "john.smith@example.com",
-    "items": [
-      {
-        "sku": "SKU-150-Q",
-        "name": "Smart Watch",
-        "quantity": 1
-      }
-    ],
+    "items": [{ "sku": "SKU-150-Q", "name": "Smart Watch", "quantity": 1 }],
     "order_date": "2025-02-15",
     "status": "delivered",
     "delivery_date": "2025-02-19",
@@ -71,13 +47,7 @@
     "order_id": "ORD1005",
     "customer_name": "Emily Rivera",
     "email": "emily.rivera@example.com",
-    "items": [
-      {
-        "sku": "SKU-200-K",
-        "name": "Laptop Sleeve",
-        "quantity": 2
-      }
-    ],
+    "items": [{ "sku": "SKU-200-K", "name": "Laptop Sleeve", "quantity": 2 }],
     "order_date": "2025-02-28",
     "status": "shipped",
     "delivery_date": null,
@@ -88,13 +58,7 @@
     "order_id": "ORD1006",
     "customer_name": "Carlos Gomez",
     "email": "carlos.gomez@example.com",
-    "items": [
-      {
-        "sku": "SKU-210-J",
-        "name": "Wireless Charger",
-        "quantity": 1
-      }
-    ],
+    "items": [{ "sku": "SKU-210-J", "name": "Wireless Charger", "quantity": 1 }],
     "order_date": "2025-03-12",
     "status": "delivered",
     "delivery_date": "2025-03-16",
@@ -105,47 +69,29 @@
     "order_id": "ORD1007",
     "customer_name": "Priya Iyer",
     "email": "priya.iyer@example.com",
-    "items": [
-      {
-        "sku": "SKU-215-M",
-        "name": "USB-C Hub",
-        "quantity": 1
-      }
-    ],
+    "items": [{ "sku": "SKU-215-M", "name": "USB-C Hub", "quantity": 1 }],
     "order_date": "2025-03-18",
     "status": "delivered",
     "delivery_date": "2025-03-22",
-    "total_amount": 54.5,
+    "total_amount": 54.50,
     "currency": "USD"
   },
   {
     "order_id": "ORD1008",
     "customer_name": "Marcus Allen",
     "email": "marcus.allen@example.com",
-    "items": [
-      {
-        "sku": "SKU-220-N",
-        "name": "Mechanical Keyboard",
-        "quantity": 1
-      }
-    ],
+    "items": [{ "sku": "SKU-220-N", "name": "Mechanical Keyboard", "quantity": 1 }],
     "order_date": "2025-01-26",
     "status": "delivered",
     "delivery_date": "2025-01-30",
-    "total_amount": 129.0,
+    "total_amount": 129.00,
     "currency": "USD"
   },
   {
     "order_id": "ORD1009",
     "customer_name": "Noah Kim",
     "email": "noah.kim@example.com",
-    "items": [
-      {
-        "sku": "SKU-230-P",
-        "name": "Webcam Pro",
-        "quantity": 1
-      }
-    ],
+    "items": [{ "sku": "SKU-230-P", "name": "Webcam Pro", "quantity": 1 }],
     "order_date": "2025-03-01",
     "status": "shipped",
     "delivery_date": null,
@@ -156,51 +102,224 @@
     "order_id": "ORD1010",
     "customer_name": "Lina Alvarez",
     "email": "lina.alvarez@example.com",
-    "items": [
-      {
-        "sku": "SKU-240-R",
-        "name": "Portable SSD 1TB",
-        "quantity": 1
-      }
-    ],
+    "items": [{ "sku": "SKU-240-R", "name": "Portable SSD 1TB", "quantity": 1 }],
     "order_date": "2025-01-10",
     "status": "cancelled",
     "delivery_date": null,
-    "total_amount": 109.0,
+    "total_amount": 109.00,
     "currency": "USD"
   },
   {
     "order_id": "ORD1011",
     "customer_name": "Owen Hart",
     "email": "owen.hart@example.com",
-    "items": [
-      {
-        "sku": "SKU-245-S",
-        "name": "4K Monitor",
-        "quantity": 1
-      }
-    ],
+    "items": [{ "sku": "SKU-245-S", "name": "4K Monitor", "quantity": 1 }],
     "order_date": "2024-12-20",
     "status": "delivered",
     "delivery_date": "2024-12-27",
-    "total_amount": 329.0,
+    "total_amount": 329.00,
     "currency": "USD"
   },
   {
     "order_id": "ORD1012",
     "customer_name": "Maya Gupta",
     "email": "maya.gupta@example.com",
-    "items": [
-      {
-        "sku": "SKU-250-T",
-        "name": "Ergonomic Chair",
-        "quantity": 1
-      }
-    ],
+    "items": [{ "sku": "SKU-250-T", "name": "Ergonomic Chair", "quantity": 1 }],
     "order_date": "2025-03-28",
     "status": "delivered",
     "delivery_date": "2025-04-01",
-    "total_amount": 219.0,
+    "total_amount": 219.00,
+    "currency": "USD"
+  },
+  {
+    "order_id": "ORD1028",
+    "customer_name": "Marcus Allen",
+    "email": "marcus.allen@example.com",
+    "items": [{ "sku": "SKU-255-U", "name": "External Hard Drive 2TB", "quantity": 1 }],
+    "order_date": "2025-02-01",
+    "status": "delivered",
+    "delivery_date": "2025-02-05",
+    "total_amount": 89.00,
+    "currency": "USD"
+  },
+  {
+    "order_id": "ORD1029",
+    "customer_name": "Owen Hart",
+    "email": "owen.hart@example.com",
+    "items": [{ "sku": "SKU-260-V", "name": "Electric Standing Desk", "quantity": 1 }],
+    "order_date": "2025-01-08",
+    "status": "delivered",
+    "delivery_date": "2025-01-15",
+    "total_amount": 399.00,
+    "currency": "USD"
+  },
+  {
+    "order_id": "ORD1013",
+    "customer_name": "Jake Turner",
+    "email": "jake.turner@example.com",
+    "items": [{ "sku": "SKU-300-A", "name": "Wireless Earbuds", "quantity": 1 }],
+    "order_date": "2024-11-08",
+    "status": "delivered",
+    "delivery_date": "2024-11-12",
+    "total_amount": 79.99,
+    "currency": "USD"
+  },
+  {
+    "order_id": "ORD1014",
+    "customer_name": "Jake Turner",
+    "email": "jake.turner@example.com",
+    "items": [{ "sku": "SKU-301-B", "name": "Smart Thermostat", "quantity": 1 }],
+    "order_date": "2024-12-03",
+    "status": "delivered",
+    "delivery_date": "2024-12-08",
+    "total_amount": 149.00,
+    "currency": "USD"
+  },
+  {
+    "order_id": "ORD1015",
+    "customer_name": "Jake Turner",
+    "email": "jake.turner@example.com",
+    "items": [{ "sku": "SKU-302-C", "name": "Fitness Tracker", "quantity": 1 }],
+    "order_date": "2025-01-13",
+    "status": "delivered",
+    "delivery_date": "2025-01-18",
+    "total_amount": 89.99,
+    "currency": "USD"
+  },
+  {
+    "order_id": "ORD1016",
+    "customer_name": "Jake Turner",
+    "email": "jake.turner@example.com",
+    "items": [{ "sku": "SKU-303-D", "name": "Portable Projector", "quantity": 1 }],
+    "order_date": "2025-02-17",
+    "status": "delivered",
+    "delivery_date": "2025-02-22",
+    "total_amount": 249.00,
+    "currency": "USD"
+  },
+  {
+    "order_id": "ORD1017",
+    "customer_name": "Jake Turner",
+    "email": "jake.turner@example.com",
+    "items": [{ "sku": "SKU-304-E", "name": "Robot Vacuum", "quantity": 1 }],
+    "order_date": "2025-03-07",
+    "status": "delivered",
+    "delivery_date": "2025-03-12",
+    "total_amount": 299.00,
+    "currency": "USD"
+  },
+  {
+    "order_id": "ORD1018",
+    "customer_name": "Nina Ross",
+    "email": "nina.ross@example.com",
+    "items": [{ "sku": "SKU-310-A", "name": "Gaming Headset", "quantity": 1 }],
+    "order_date": "2025-01-05",
+    "status": "delivered",
+    "delivery_date": "2025-01-10",
+    "total_amount": 119.00,
+    "currency": "USD"
+  },
+  {
+    "order_id": "ORD1019",
+    "customer_name": "Nina Ross",
+    "email": "nina.ross@example.com",
+    "items": [{ "sku": "SKU-311-B", "name": "Electric Kettle", "quantity": 1 }],
+    "order_date": "2025-01-23",
+    "status": "delivered",
+    "delivery_date": "2025-01-28",
+    "total_amount": 49.99,
+    "currency": "USD"
+  },
+  {
+    "order_id": "ORD1020",
+    "customer_name": "Nina Ross",
+    "email": "nina.ross@example.com",
+    "items": [{ "sku": "SKU-312-C", "name": "Air Purifier", "quantity": 1 }],
+    "order_date": "2025-02-10",
+    "status": "delivered",
+    "delivery_date": "2025-02-16",
+    "total_amount": 189.00,
+    "currency": "USD"
+  },
+  {
+    "order_id": "ORD1021",
+    "customer_name": "Nina Ross",
+    "email": "nina.ross@example.com",
+    "items": [{ "sku": "SKU-313-D", "name": "Coffee Maker", "quantity": 1 }],
+    "order_date": "2025-03-02",
+    "status": "delivered",
+    "delivery_date": "2025-03-08",
+    "total_amount": 159.00,
+    "currency": "USD"
+  },
+  {
+    "order_id": "ORD1022",
+    "customer_name": "Ryan Cho",
+    "email": "ryan.cho@example.com",
+    "items": [{ "sku": "SKU-320-A", "name": "DSLR Camera", "quantity": 1 }],
+    "order_date": "2024-10-12",
+    "status": "delivered",
+    "delivery_date": "2024-10-18",
+    "total_amount": 799.00,
+    "currency": "USD"
+  },
+  {
+    "order_id": "ORD1023",
+    "customer_name": "Ryan Cho",
+    "email": "ryan.cho@example.com",
+    "items": [{ "sku": "SKU-321-B", "name": "Gaming Console", "quantity": 1 }],
+    "order_date": "2024-11-25",
+    "status": "delivered",
+    "delivery_date": "2024-11-30",
+    "total_amount": 499.00,
+    "currency": "USD"
+  },
+  {
+    "order_id": "ORD1024",
+    "customer_name": "Ryan Cho",
+    "email": "ryan.cho@example.com",
+    "items": [
+      { "sku": "SKU-322-C", "name": "Laptop Stand", "quantity": 1 },
+      { "sku": "SKU-322-D", "name": "USB Hub", "quantity": 1 },
+      { "sku": "SKU-322-E", "name": "Cable Organiser Kit", "quantity": 1 }
+    ],
+    "order_date": "2024-12-18",
+    "status": "delivered",
+    "delivery_date": "2024-12-22",
+    "total_amount": 89.00,
+    "currency": "USD"
+  },
+  {
+    "order_id": "ORD1025",
+    "customer_name": "Ryan Cho",
+    "email": "ryan.cho@example.com",
+    "items": [{ "sku": "SKU-323-F", "name": "Noise Cancelling Headphones Pro", "quantity": 1 }],
+    "order_date": "2025-01-15",
+    "status": "delivered",
+    "delivery_date": "2025-01-20",
+    "total_amount": 349.00,
+    "currency": "USD"
+  },
+  {
+    "order_id": "ORD1026",
+    "customer_name": "Ryan Cho",
+    "email": "ryan.cho@example.com",
+    "items": [{ "sku": "SKU-324-G", "name": "Tablet 11-inch", "quantity": 1 }],
+    "order_date": "2025-02-07",
+    "status": "delivered",
+    "delivery_date": "2025-02-12",
+    "total_amount": 649.00,
+    "currency": "USD"
+  },
+  {
+    "order_id": "ORD1027",
+    "customer_name": "Ryan Cho",
+    "email": "ryan.cho@example.com",
+    "items": [{ "sku": "SKU-325-H", "name": "Mechanical Gaming Keyboard", "quantity": 1 }],
+    "order_date": "2025-03-13",
+    "status": "delivered",
+    "delivery_date": "2025-03-18",
+    "total_amount": 199.00,
     "currency": "USD"
   }
 ]

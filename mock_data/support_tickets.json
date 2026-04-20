@@ -1,0 +1,189 @@
+[
+  {
+    "customer_email": "ava.chen@example.com",
+    "order_id": "ORD1001",
+    "ticket_text": "I see two charges of $45.99 on my credit card for the wireless mouse I ordered on Jan 8th. Only one order was placed. Please refund the duplicate charge.",
+    "ticket_type": "refund",
+    "issue_type": "duplicate_charge",
+    "requested_at": "2025-01-14T10:22:00",
+    "outcome": "approved",
+    "resolution": { "amount": 45.99 },
+    "abuse_label": "legitimate"
+  },
+  {
+    "customer_email": "marcus.allen@example.com",
+    "order_id": "ORD1008",
+    "ticket_text": "My mechanical keyboard arrived with two keycaps broken off and the spacebar is not registering keystrokes. The item is clearly defective. I would like a replacement unit.",
+    "ticket_type": "replacement",
+    "issue_type": "damaged_item",
+    "requested_at": "2025-02-01T14:05:00",
+    "outcome": "approved",
+    "resolution": { "item": "Mechanical Keyboard", "sku": "SKU-220-N" },
+    "abuse_label": "legitimate"
+  },
+  {
+    "customer_email": "marcus.allen@example.com",
+    "order_id": "ORD1028",
+    "ticket_text": "The external hard drive I ordered was not in the package when it arrived. The box was sealed but completely empty inside. Please process a refund.",
+    "ticket_type": "refund",
+    "issue_type": "missing_item",
+    "requested_at": "2025-02-07T09:41:00",
+    "outcome": "pending",
+    "resolution": { "amount": 89.00 },
+    "abuse_label": "suspicious"
+  },
+  {
+    "customer_email": "owen.hart@example.com",
+    "order_id": "ORD1011",
+    "ticket_text": "My 4K monitor was promised for delivery within 3 business days but arrived two weeks late. I had already sourced an alternative by then. I am requesting a partial refund for the inconvenience caused by the delay.",
+    "ticket_type": "refund",
+    "issue_type": "late_delivery",
+    "requested_at": "2024-12-30T16:18:00",
+    "outcome": "approved",
+    "resolution": { "amount": 50.00 },
+    "abuse_label": "legitimate"
+  },
+  {
+    "customer_email": "owen.hart@example.com",
+    "order_id": "ORD1029",
+    "ticket_text": "The electric standing desk arrived with the motor control panel broken. It only moves in one direction. I need a replacement control panel or a full unit replacement.",
+    "ticket_type": "replacement",
+    "issue_type": "damaged_item",
+    "requested_at": "2025-01-18T11:30:00",
+    "outcome": "approved",
+    "resolution": { "item": "Electric Standing Desk", "sku": "SKU-260-V" },
+    "abuse_label": "suspicious"
+  },
+  {
+    "customer_email": "jake.turner@example.com",
+    "order_id": "ORD1013",
+    "ticket_text": "I received my wireless earbuds order but the earbuds were not inside the box. Only the charging cable and a manual were in the packaging. Please issue a full refund.",
+    "ticket_type": "refund",
+    "issue_type": "missing_item",
+    "requested_at": "2024-11-15T08:55:00",
+    "outcome": "approved",
+    "resolution": { "amount": 79.99 },
+    "abuse_label": "suspicious"
+  },
+  {
+    "customer_email": "jake.turner@example.com",
+    "order_id": "ORD1014",
+    "ticket_text": "The smart thermostat box arrived sealed but was completely empty when opened. No product inside whatsoever. I need a full refund immediately.",
+    "ticket_type": "refund",
+    "issue_type": "missing_item",
+    "requested_at": "2024-12-10T13:20:00",
+    "outcome": "approved",
+    "resolution": { "amount": 149.00 },
+    "abuse_label": "suspicious"
+  },
+  {
+    "customer_email": "jake.turner@example.com",
+    "order_id": "ORD1015",
+    "ticket_text": "Once again I have received an empty box. The fitness tracker was not inside. This is the third time I have had a missing item from your company in two months. I am requesting a full refund.",
+    "ticket_type": "refund",
+    "issue_type": "missing_item",
+    "requested_at": "2025-01-20T10:05:00",
+    "outcome": "approved",
+    "resolution": { "amount": 89.99 },
+    "abuse_label": "abusive"
+  },
+  {
+    "customer_email": "jake.turner@example.com",
+    "order_id": "ORD1017",
+    "ticket_text": "My robot vacuum package arrived but contained only foam inserts with no actual product inside. This is the fourth missing item I have experienced. I want a full refund processed immediately.",
+    "ticket_type": "refund",
+    "issue_type": "missing_item",
+    "requested_at": "2025-03-14T09:30:00",
+    "outcome": "pending",
+    "resolution": { "amount": 299.00 },
+    "abuse_label": "abusive"
+  },
+  {
+    "customer_email": "nina.ross@example.com",
+    "order_id": "ORD1018",
+    "ticket_text": "I was charged twice for my gaming headset order. Both charges of $119.00 appeared on my bank statement on the same date. Please refund the duplicate payment.",
+    "ticket_type": "refund",
+    "issue_type": "duplicate_charge",
+    "requested_at": "2025-01-12T15:44:00",
+    "outcome": "approved",
+    "resolution": { "amount": 119.00 },
+    "abuse_label": "legitimate"
+  },
+  {
+    "customer_email": "nina.ross@example.com",
+    "order_id": "ORD1019",
+    "ticket_text": "My electric kettle arrived with a cracked lid. The heating element also appears damaged — it takes over 20 minutes to boil water. I would like a replacement sent.",
+    "ticket_type": "replacement",
+    "issue_type": "damaged_item",
+    "requested_at": "2025-01-30T12:10:00",
+    "outcome": "approved",
+    "resolution": { "item": "Electric Kettle", "sku": "SKU-311-B" },
+    "abuse_label": "suspicious"
+  },
+  {
+    "customer_email": "nina.ross@example.com",
+    "order_id": "ORD1021",
+    "ticket_text": "I never received my coffee maker. The tracking status says delivered but there was nothing at my door. My neighbours confirm they did not take it either. Please issue a full refund.",
+    "ticket_type": "refund",
+    "issue_type": "missing_item",
+    "requested_at": "2025-03-10T17:02:00",
+    "outcome": "pending",
+    "resolution": { "amount": 159.00 },
+    "abuse_label": "abusive"
+  },
+  {
+    "customer_email": "ryan.cho@example.com",
+    "order_id": "ORD1022",
+    "ticket_text": "My DSLR camera order shows as delivered but I never received it. I was home all day waiting for the delivery. Please investigate and issue a full refund.",
+    "ticket_type": "refund",
+    "issue_type": "missing_item",
+    "requested_at": "2024-10-20T11:15:00",
+    "outcome": "approved",
+    "resolution": { "amount": 799.00 },
+    "abuse_label": "suspicious"
+  },
+  {
+    "customer_email": "ryan.cho@example.com",
+    "order_id": "ORD1023",
+    "ticket_text": "The gaming console I ordered was not delivered despite tracking showing it as delivered. I checked with neighbours and the building manager — no package was received. I need a full refund.",
+    "ticket_type": "refund",
+    "issue_type": "missing_item",
+    "requested_at": "2024-12-02T09:50:00",
+    "outcome": "approved",
+    "resolution": { "amount": 499.00 },
+    "abuse_label": "abusive"
+  },
+  {
+    "customer_email": "ryan.cho@example.com",
+    "order_id": "ORD1024",
+    "ticket_text": "I received a completely wrong order. I ordered a laptop accessories bundle but received a phone case that belongs to someone else. Please send the correct items.",
+    "ticket_type": "replacement",
+    "issue_type": "wrong_item",
+    "requested_at": "2024-12-24T14:33:00",
+    "outcome": "approved",
+    "resolution": { "item": "Laptop Accessories Bundle", "skus": ["SKU-322-C", "SKU-322-D", "SKU-322-E"] },
+    "abuse_label": "abusive"
+  },
+  {
+    "customer_email": "ryan.cho@example.com",
+    "order_id": "ORD1025",
+    "ticket_text": "The noise cancelling headphones box arrived but was empty inside — only bubble wrap. No product. I need an immediate refund.",
+    "ticket_type": "refund",
+    "issue_type": "missing_item",
+    "requested_at": "2025-01-22T08:20:00",
+    "outcome": "approved",
+    "resolution": { "amount": 349.00 },
+    "abuse_label": "abusive"
+  },
+  {
+    "customer_email": "ryan.cho@example.com",
+    "order_id": "ORD1026",
+    "ticket_text": "My tablet order shows as delivered but was never received. This is the fourth package that has gone missing with your company. I am requesting a full refund and escalation to management.",
+    "ticket_type": "refund",
+    "issue_type": "missing_item",
+    "requested_at": "2025-02-14T16:45:00",
+    "outcome": "pending",
+    "resolution": { "amount": 649.00 },
+    "abuse_label": "abusive"
+  }
+]
